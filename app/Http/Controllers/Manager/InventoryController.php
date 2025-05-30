@@ -32,7 +32,7 @@ class InventoryController extends Controller
 
         $inventories = $query->latest()->paginate(10);
 
-        return view('Manager.Inventories.index', compact('inventories'));
+        return view('manager.Inventories.index', compact('inventories'));
     }
 
 
@@ -41,7 +41,7 @@ class InventoryController extends Controller
         $branchId = \App\Models\Branch::where('user_id', auth()->id())->value('id');
         $products = Product::where('branch_id', $branchId)->get();
         $brands = Brand::all();
-        return view('Manager.Inventories.create', compact('products', 'brands'));
+        return view('manager.Inventories.create', compact('products', 'brands'));
     }
 
     public function store(Request $request)
@@ -75,7 +75,7 @@ class InventoryController extends Controller
         $products = Product::where('branch_id', $branchId)->get();
         $brands = Brand::all();
 
-        return view('Manager.Inventories.edit', compact('inventory', 'products', 'brands'));
+        return view('manager.Inventories.edit', compact('inventory', 'products', 'brands'));
     }
 
     public function update(Request $request, $id)

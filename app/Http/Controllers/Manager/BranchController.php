@@ -21,7 +21,7 @@ class BranchController extends Controller
         // Phân trang và lấy dữ liệu
         $branches = $query->paginate(10); // Hoặc thay đổi số lượng phân trang theo yêu cầu
 
-        return view('Manager.branches.index', compact('branches'));
+        return view('manager.branches.index', compact('branches'));
     }
 
     public function create()

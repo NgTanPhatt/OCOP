@@ -46,14 +46,14 @@ class ProductController extends Controller
             $branches = Branch::where('user_id', Auth::id())->get();
         }
 
-        return view('Manager.products.index', compact('products', 'categories', 'branches'));
+        return view('manager.products.index', compact('products', 'categories', 'branches'));
     }
 
     public function create()
     {
         $categories = Category::all();
         $branches = Branch::all();
-        return view('Manager.products.create', compact('categories', 'branches'));
+        return view('manager.products.create', compact('categories', 'branches'));
     }
 
     public function store(Request $request)
@@ -114,7 +114,7 @@ class ProductController extends Controller
         $categories = Category::all();
         $branches = Branch::all();
 
-        return view('Manager.products.edit', compact('product', 'categories', 'branches'));
+        return view('manager.products.edit', compact('product', 'categories', 'branches'));
     }
 
     public function update(Request $request, $id)

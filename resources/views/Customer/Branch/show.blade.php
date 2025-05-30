@@ -1,4 +1,4 @@
-@extends('Customer.layouts.app')
+@extends('customer.layouts.app')
 @section('title', $branch->name)
 @section('content')
     <div class="page-header breadcrumb-wrap" style="border-bottom: unset;">

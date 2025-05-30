@@ -21,7 +21,7 @@ class CategoryController extends Controller
         // Lấy số lượng sản phẩm trong từng chuyên mục
         $categories = $query->withCount('products')->paginate(10);
 
-        return view('Manager.categories.index', compact('categories'));
+        return view('manager.categories.index', compact('categories'));
     }
 
     public function create()
